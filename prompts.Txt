@@ -1,3 +1,7 @@
-C:\Windsurf\nenpi\fuel_calculator.tsx
-
-このファイルが今回作るツールになるんだけど、これはアーティファクトで作ったツールになるので、そのままツール作成として使うには難しいと思います。ですので、ここでこのツールを実際に動かして、スパベースなどと連携していきやすい形のファイルに変更して実装してみて。
+index-lVWZxS4u.js:164 [Supabase] VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY が設定されていません。 .env を確認してください。
+（匿名） @ index-lVWZxS4u.js:164
+index-lVWZxS4u.js:164 Uncaught Error: supabaseUrl is required.
+    at new Mv (index-lVWZxS4u.js:164:30589)
+    at zv (index-lVWZxS4u.js:164:33726)
+    at index-lVWZxS4u.js:164:34276
+/favicon.ico:1  Failed to load resource: the server responded with a status of 404 ()
