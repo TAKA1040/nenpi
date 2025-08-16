@@ -7,7 +7,5 @@ index-lVWZxS4u.js:164 Uncaught Error: supabaseUrl is required.
 Mv @ index-lVWZxS4u.js:164
 zv @ index-lVWZxS4u.js:164
 （匿名） @ index-lVWZxS4u.js:164
+（インデックス）:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
 favicon.ico:1  GET https://nenpi-r4q0xhpu8-takas-projects-ebc9ff02.vercel.app/favicon.ico 404 (Not Found)
-
-
-あと情報漏洩問題についても対策をしておいて。

@@ -9,7 +9,8 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(vercel:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:nenpi-lb1eaxh1r-takas-projects-ebc9ff02.vercel.app)"
     ],
     "deny": [],
     "ask": []
