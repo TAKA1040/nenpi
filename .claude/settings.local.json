@@ -10,7 +10,18 @@
       "Bash(git push:*)",
       "Bash(vercel:*)",
       "Bash(git commit:*)",
-      "WebFetch(domain:nenpi-lb1eaxh1r-takas-projects-ebc9ff02.vercel.app)"
+      "WebFetch(domain:nenpi-lb1eaxh1r-takas-projects-ebc9ff02.vercel.app)",
+      "Bash(git remote remove:*)",
+      "Bash(true)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(cp:*)",
+      "Bash(npx supabase:*)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

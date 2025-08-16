@@ -16,10 +16,11 @@ import {
   Cell
 } from 'recharts'
 import { FuelRecord } from './FuelCalculator'
-import { formatCurrency, formatFuelEfficiency, formatPrice } from '@/utils/statistics'
+import { StatisticsData, formatCurrency, formatFuelEfficiency, formatPrice } from '@/utils/statistics'
 
 interface ChartsProps {
   records: FuelRecord[]
+  statistics: StatisticsData
 }
 
 const Charts: React.FC<ChartsProps> = ({ records }) => {
@@ -239,7 +240,7 @@ const Charts: React.FC<ChartsProps> = ({ records }) => {
                 cy="50%"
                 labelLine={false}
                 label={({ station, count, percent }) => 
-                  percent > 0.05 ? `${station} (${count})` : ''
+                  (percent || 0) > 0.05 ? `${station} (${count})` : ''
                 }
                 outerRadius={80}
                 fill="#8884d8"
