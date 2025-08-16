@@ -8,7 +8,8 @@
       "Bash(sed:*)",
       "Bash(git add:*)",
       "Bash(git push:*)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

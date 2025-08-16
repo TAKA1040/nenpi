@@ -4,4 +4,10 @@ index-lVWZxS4u.js:164 Uncaught Error: supabaseUrl is required.
     at new Mv (index-lVWZxS4u.js:164:30589)
     at zv (index-lVWZxS4u.js:164:33726)
     at index-lVWZxS4u.js:164:34276
-/favicon.ico:1  Failed to load resource: the server responded with a status of 404 ()
+Mv @ index-lVWZxS4u.js:164
+zv @ index-lVWZxS4u.js:164
+（匿名） @ index-lVWZxS4u.js:164
+favicon.ico:1  GET https://nenpi-r4q0xhpu8-takas-projects-ebc9ff02.vercel.app/favicon.ico 404 (Not Found)
+
+
+あと情報漏洩問題についても対策をしておいて。

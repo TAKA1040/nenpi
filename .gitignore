@@ -24,3 +24,16 @@ pnpm-debug.log*
 .DS_Store
 
 .vercel
+
+# Security & Development
+*.key
+*.pem
+*.p12
+*.crt
+*.csr
+secrets/
+private/
+.claude/
+prompts.Txt
+*.backup
+temp/
