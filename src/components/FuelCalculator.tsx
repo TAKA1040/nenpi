@@ -1052,8 +1052,6 @@ const FuelCalculator: React.FC = () => {
             </button>
           </div>
         )}
-        </>
-        )}
       </div>
     </div>
   )
