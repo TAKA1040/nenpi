@@ -1,47 +1,8 @@
-画面全体の構成
-
-左側に「給油記録の入力フォーム」
-
-右側に「記録一覧」
-
-右上に「ログアウトボタン」
-
-典型的な ダッシュボード構成 で、React や Next.js のコンポーネントで分けられている可能性が高いです。
-
-✍ 入力フォーム部分
-
-入力項目が並んでいて、1回の給油記録を追加できる作りです。
-
-給油日 → date picker (カレンダーから選ぶ日付入力)
-
-スタンド名 → テキスト入力 (例: ENEOS)
-
-給油量 (L) → 数値入力 (例: 45.5)
-
-金額 (円) → 数値入力 (例: 6500)
-
-走行距離 (km) → 数値入力 (例: 12500.0)
-
-最後に 「＋ 記録を追加」ボタン があり、入力内容をデータベース（Supabase かもしれません）に保存する仕組みになっているはずです。
-
-📋 記録一覧部分
-
-右側のボックスに「まだ記録がありません」と表示されています。
-
-これは、データベースに保存した内容を一覧表示する領域です。
-
-記録が増えると、テーブルやカード形式で「給油日」「スタンド名」「燃費計算結果」などが並んで表示されるように設計されていると思います。
-
-🔒 認証機能
-
-画面上部に「ログイン中: dash201206@gmail.com」と表示されています。
-
-つまり Googleアカウント認証 を通じてログインして利用する仕様です。
-
-Supabase Auth や Firebase Auth が裏で使われている可能性が高いです。
-
-
-
-
-これが今の表示されているページを言語化したもの。
-codeの作りと一致しているなら、機能も何もないし、デザイン性で皆無。
+[vite] connecting...
+client:618 [vite] connected.
+chunk-WRD5HZVH.js?v=a56298b2:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+supabase.ts:15 [Supabase Debug] Object
+supabase.ts:30 [Supabase] 環境変数が設定されていません。VITE_SUPABASE_URL/VITE_SUPABASE_ANON_KEY または NEXT_PUBLIC_SUPABASE_URL/NEXT_PUBLIC_SUPABASE_ANON_KEY を設定してください。
+（匿名） @ supabase.ts:30このエラーを分析
+supabase.ts:31 Uncaught Error: Supabase configuration is missing
+    at supabase.ts:31:9

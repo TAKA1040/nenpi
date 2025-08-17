@@ -21,7 +21,8 @@
       "Bash(curl:*)",
       "Bash(npm run dev:*)",
       "WebFetch(domain:localhost)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(supabase db:*)"
     ],
     "deny": [],
     "ask": []
