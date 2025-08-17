@@ -95,25 +95,6 @@ const Dashboard = ({ session }: { session: Session }) => {
       </header>
 
       <main className="space-y-8">
-        {/* --- Summary Section --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {hasData ? (
-                <>
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6"><Gauge className="w-8 h-8 text-blue-600 mb-2" /> <p className="text-sm font-medium text-blue-800">燃費スコア</p><p className="text-2xl font-bold text-blue-900">{getEfficiencyGrade(statistics.averageFuelEfficiency)}</p><p className="text-sm text-blue-600">{formatFuelEfficiency(statistics.averageFuelEfficiency)}</p></div>
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6"><DollarSign className="w-8 h-8 text-green-600 mb-2" /><p className="text-sm font-medium text-green-800">月平均コスト</p><p className="text-2xl font-bold text-green-900">{formatCurrency(statistics.averageCostPerMonth)}</p><p className="text-sm text-green-600">予算達成度: {statistics.averageCostPerMonth > 0 ? ((monthlyBudget / statistics.averageCostPerMonth) * 100).toFixed(0) : '-'}%</p></div>
-                    <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-lg p-6"><BarChart3 className="w-8 h-8 text-yellow-600 mb-2" /><p className="text-sm font-medium text-yellow-800">価格動向</p><p className="text-2xl font-bold text-yellow-900 flex items-center">{statistics.trends.isPriceIncreasing ? <TrendingUp className="text-red-500"/> : <TrendingDown className="text-green-500"/>} {statistics.trends.isPriceIncreasing ? '上昇' : '安定'}</p><p className="text-sm text-yellow-600">平均: {formatPrice(statistics.averagePrice)}</p></div>
-                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-lg p-6"><Target className="w-8 h-8 text-orange-600 mb-2" /><p className="text-sm font-medium text-orange-800">リッター単価</p><p className="text-2xl font-bold text-orange-900">{formatPrice(statistics.averagePrice)}</p><p className="text-sm text-orange-600">L当たりの平均価格</p></div>
-                </>
-            ) : (
-                <>
-                    <SummaryCardPlaceholder title="燃費スコア" icon={<Gauge className="w-8 h-8 text-gray-400 mb-2" />} />
-                    <SummaryCardPlaceholder title="月平均コスト" icon={<DollarSign className="w-8 h-8 text-gray-400 mb-2" />} />
-                    <SummaryCardPlaceholder title="価格動向" icon={<BarChart3 className="w-8 h-8 text-gray-400 mb-2" />} />
-                    <SummaryCardPlaceholder title="リッター単価" icon={<Target className="w-8 h-8 text-gray-400 mb-2" />} />
-                </>
-            )}
-        </div>
-
         {/* --- Data Management Section --- */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
@@ -146,6 +127,25 @@ const Dashboard = ({ session }: { session: Session }) => {
                     </div>
                 )}
             </div>
+        </div>
+
+        {/* --- Statistics Summary Section --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {hasData ? (
+                <>
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6"><Gauge className="w-8 h-8 text-blue-600 mb-2" /> <p className="text-sm font-medium text-blue-800">燃費スコア</p><p className="text-2xl font-bold text-blue-900">{getEfficiencyGrade(statistics.averageFuelEfficiency)}</p><p className="text-sm text-blue-600">{formatFuelEfficiency(statistics.averageFuelEfficiency)}</p></div>
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6"><DollarSign className="w-8 h-8 text-green-600 mb-2" /><p className="text-sm font-medium text-green-800">月平均コスト</p><p className="text-2xl font-bold text-green-900">{formatCurrency(statistics.averageCostPerMonth)}</p><p className="text-sm text-green-600">予算達成度: {statistics.averageCostPerMonth > 0 ? ((monthlyBudget / statistics.averageCostPerMonth) * 100).toFixed(0) : '-'}%</p></div>
+                    <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-lg p-6"><BarChart3 className="w-8 h-8 text-yellow-600 mb-2" /><p className="text-sm font-medium text-yellow-800">価格動向</p><p className="text-2xl font-bold text-yellow-900 flex items-center">{statistics.trends.isPriceIncreasing ? <TrendingUp className="text-red-500"/> : <TrendingDown className="text-green-500"/>} {statistics.trends.isPriceIncreasing ? '上昇' : '安定'}</p><p className="text-sm text-yellow-600">平均: {formatPrice(statistics.averagePrice)}</p></div>
+                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-lg p-6"><Target className="w-8 h-8 text-orange-600 mb-2" /><p className="text-sm font-medium text-orange-800">リッター単価</p><p className="text-2xl font-bold text-orange-900">{formatPrice(statistics.averagePrice)}</p><p className="text-sm text-orange-600">L当たりの平均価格</p></div>
+                </>
+            ) : (
+                <>
+                    <SummaryCardPlaceholder title="燃費スコア" icon={<Gauge className="w-8 h-8 text-gray-400 mb-2" />} />
+                    <SummaryCardPlaceholder title="月平均コスト" icon={<DollarSign className="w-8 h-8 text-gray-400 mb-2" />} />
+                    <SummaryCardPlaceholder title="価格動向" icon={<BarChart3 className="w-8 h-8 text-gray-400 mb-2" />} />
+                    <SummaryCardPlaceholder title="リッター単価" icon={<Target className="w-8 h-8 text-gray-400 mb-2" />} />
+                </>
+            )}
         </div>
 
         {/* --- Evaluation and Alerts Section --- */}
