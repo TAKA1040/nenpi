@@ -1,8 +1,5 @@
-[vite] connecting...
-client:618 [vite] connected.
-chunk-WRD5HZVH.js?v=a56298b2:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
-supabase.ts:15 [Supabase Debug] Object
-supabase.ts:30 [Supabase] 環境変数が設定されていません。VITE_SUPABASE_URL/VITE_SUPABASE_ANON_KEY または NEXT_PUBLIC_SUPABASE_URL/NEXT_PUBLIC_SUPABASE_ANON_KEY を設定してください。
-（匿名） @ supabase.ts:30このエラーを分析
-supabase.ts:31 Uncaught Error: Supabase configuration is missing
-    at supabase.ts:31:9
+スマホの入力画面の変更点です。
+
+1つ目、選択のボタンの隣に単位の入力項目を表示。
+二つ目、入り数の隣に価格の入力項目、単価を表示。
+スマホ画面においては、このように入力欄を2段で表示するようにしてください。

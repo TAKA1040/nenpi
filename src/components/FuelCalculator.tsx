@@ -88,27 +88,42 @@ const FuelCalculator: React.FC<FuelCalculatorProps> = ({ user, records, onRecord
       <h2 className="text-xl font-semibold text-gray-800 mb-4">
         {editingRecord ? '記録の編集' : '給油記録の入力'}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="date">給油日</Label>
-          <Input id="date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+      {/* スマホ向け2段レイアウト */}
+      <div className="space-y-4">
+        {/* 1段目: 給油日 + スタンド名 */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="date">給油日</Label>
+            <Input id="date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+          </div>
+          <div>
+            <Label htmlFor="station">スタンド名</Label>
+            <Input id="station" type="text" list="stations" value={formData.station} onChange={(e) => setFormData({ ...formData, station: e.target.value })} placeholder="例: ENEOS" />
+            <datalist id="stations">
+              {stationList.map(s => <option key={s} value={s} />)}
+            </datalist>
+          </div>
         </div>
-        <div>
-          <Label htmlFor="station">スタンド名</Label>
-          <Input id="station" type="text" list="stations" value={formData.station} onChange={(e) => setFormData({ ...formData, station: e.target.value })} placeholder="例: ENEOS" />
-          <datalist id="stations">
-            {stationList.map(s => <option key={s} value={s} />)}
-          </datalist>
+        
+        {/* 2段目: 給油量 + 金額と単価表示 */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="amount">給油量 (L)</Label>
+            <Input id="amount" type="number" step="0.01" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} placeholder="例: 45.5" />
+          </div>
+          <div>
+            <Label htmlFor="cost">金額 (円)</Label>
+            <Input id="cost" type="number" value={formData.cost} onChange={(e) => setFormData({ ...formData, cost: e.target.value })} placeholder="例: 6500" />
+            {formData.amount && formData.cost && parseFloat(formData.amount) > 0 && (
+              <p className="text-sm text-gray-600 mt-1">
+                単価: ¥{(parseInt(formData.cost) / parseFloat(formData.amount)).toFixed(2)}/L
+              </p>
+            )}
+          </div>
         </div>
+        
+        {/* 3段目: 走行距離 */}
         <div>
-          <Label htmlFor="amount">給油量 (L)</Label>
-          <Input id="amount" type="number" step="0.01" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} placeholder="例: 45.5" />
-        </div>
-        <div>
-          <Label htmlFor="cost">金額 (円)</Label>
-          <Input id="cost" type="number" value={formData.cost} onChange={(e) => setFormData({ ...formData, cost: e.target.value })} placeholder="例: 6500" />
-        </div>
-        <div className="md:col-span-2">
           <Label htmlFor="mileage">走行距離 (km)</Label>
           <Input id="mileage" type="number" step="0.1" value={formData.mileage} onChange={(e) => setFormData({ ...formData, mileage: e.target.value })} placeholder="例: 12500.0" />
         </div>
