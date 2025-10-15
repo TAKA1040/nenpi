@@ -5,9 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:port": "vite --port",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run dev",
+    "local": "npm run dev",
+    "deploy": "npm run build && vercel --prod --yes",
+    "deploy:quick": "vercel --prod --yes",
+    "commit-deploy": "git add . && git commit -m \"chore: deploy update\" && git push origin main && npm run deploy:quick"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
@@ -31,6 +37,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
+    "sharp": "^0.34.4",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
     "vite": "^5.4.1"
